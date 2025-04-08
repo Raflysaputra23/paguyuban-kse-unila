@@ -11,7 +11,9 @@ import {
   NavigationMenuTrigger,
 } from "./navigation-menu";
 import { cn } from "@/lib/utils";
-import React from "react";
+import React, { useEffect } from "react";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 const components: { title: string; href: string; description: string }[] = [
   {
@@ -69,19 +71,27 @@ const components: { title: string; href: string; description: string }[] = [
   },
 ];
 
-const navbar = () => {
+const Navbar = () => {
+  useEffect(() => {
+          AOS.init({
+            once: true
+          });
+  }, []);
+
   return (
     <nav className="text-slate-200 flex items-center justify-between bg-slate-50 mx-auto max-w-full lg:max-w-[92%] w-full p-4 rounded-md shadow-lg">
       <NavigationMenu className="flex items-center gap-2">
         <Button
+          data-aos-delay="500"
+          data-aos="fade-right"
           variant="outline"
           className="bg-slate-200 text-slate-800 hover:bg-slate-300 cursor-pointer"
           asChild
         >
-          <Link href="/">Home</Link>
+          <Link href="/" className="flex items-center gap-2"><i className="bx bxs-home"></i> Home</Link>
         </Button>
-        <NavigationMenuItem className="list-none">
-          <NavigationMenuTrigger className="bg-slate-200 text-slate-800 hover:bg-slate-300 cursor-pointer">Divisi</NavigationMenuTrigger>
+        <NavigationMenuItem data-aos="fade-right"  data-aos-delay="400" className="list-none">
+          <NavigationMenuTrigger className="bg-slate-200 text-slate-800 hover:bg-slate-300 cursor-pointer flex items-center gap-2"><i className="bx bxs-group"></i> Bidang</NavigationMenuTrigger>
           <NavigationMenuContent>
             <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
               {components.map((component) => (
@@ -96,11 +106,46 @@ const navbar = () => {
             </ul>
           </NavigationMenuContent>
         </NavigationMenuItem>
+        <Button
+          data-aos-delay="300"
+          data-aos="fade-right"
+          variant="outline"
+          className="bg-slate-200 text-slate-800 hover:bg-slate-300 cursor-pointer"
+          asChild
+        >
+          <Link href="/" className="flex items-center"><i className="bx bxs-camera"></i> Dokumentasi Kegiatan</Link>
+        </Button>
+        <Button
+          data-aos-delay="200"
+          data-aos="fade-right"
+          variant="outline"
+          className="bg-slate-200 text-slate-800 hover:bg-slate-300 cursor-pointer"
+          asChild
+        >
+          <Link href="/" className="flex items-center"><i className="bx bxs-book"></i> Arsip</Link>
+        </Button>
+        <Button
+          data-aos-delay="100"
+          data-aos="fade-right"
+          variant="outline"
+          className="bg-slate-200 text-slate-800 hover:bg-slate-300 cursor-pointer"
+          asChild
+        >
+          <Link href="/" className="flex items-center"><i className="bx bxs-calendar"></i> Kalender Kegiatan</Link>
+        </Button>
+        <Button
+          data-aos-delay="0"
+          data-aos="fade-right"
+          variant="outline"
+          className="bg-slate-200 text-slate-800 hover:bg-slate-300 cursor-pointer"
+          asChild
+        >
+          <Link href="/" className="flex items-center"><i className="bx bxs-contact"></i> Hubungi Kami</Link>
+        </Button>
       </NavigationMenu>
-      <section></section>
       <section className="flex items-center gap-2">
-        <h1 className="text-slate-800 text-[.9rem]">Paguyuban KSE</h1>
-        <Avatar className="shadow">
+        <h1 data-aos="fade-left" data-aos-delay="0" className="text-slate-800 text-[.9rem]">Paguyuban KSE</h1>
+        <Avatar data-aos="fade-left"  data-aos-delay="100" className="shadow">
           <AvatarImage src="https://files.catbox.moe/jckcrf.jpg" />
           <AvatarFallback>CN</AvatarFallback>
         </Avatar>
@@ -136,4 +181,4 @@ const ListItem = React.forwardRef<
 
 ListItem.displayName = "ListItem";
 
-export default navbar;
+export default Navbar;
