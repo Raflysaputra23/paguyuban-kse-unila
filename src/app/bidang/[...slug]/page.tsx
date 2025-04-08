@@ -96,7 +96,7 @@ const component: Components[] = [
     id: 9,
     title: "Bidang Kominfo",
     image: "/bidangKominfo.png",
-    progja: [],
+    progja: ["Aktivasi Media Sosial","Miling List(Milis)","Pelatihan Editing Design Grafis dan Video Grafis"],
     href: "bidang/kominfo/9",
     description:
       "Bidang Kominfo adalah bidang yang bertanggung jawab mengelola dan menyebarkan informasi internal dan eksternal. Serta mengoptimalkan media dan teknologi informasi untuk meningkatkan organisasi.",
