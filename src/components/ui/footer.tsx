@@ -2,7 +2,7 @@ import Link from "next/link";
 
 const footer = () => {
   return (
-    <footer className="w-full p-4 bg-slate-300 flex justify-center">
+    <footer className="w-full p-4 bg-slate-300 flex justify-center mt-4">
       <section className="text-center">
         <h1 className="font-bold">Copyright</h1>
         <p className="text-[.9rem] text-slate-700">

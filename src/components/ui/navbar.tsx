@@ -16,54 +16,54 @@ import React from "react";
 const components: { title: string; href: string; description: string }[] = [
   {
     title: "Ketua & Wakil Ketua Umum",
-    href: "bidang/ketua-wakil-umum",
+    href: "bidang/ketua-wakil-umum/1",
     description:
       "Ketua dibantu oleh Wakil Ketua Umum merupakan pemimpin utama organisasi yang bertanggung jawab atas jalannya seluruh kegiatan yang ada di organisasi serta berkoordinasi dengan Yayasan KSE dan dengan para pimpinan bidang ",
   },
   {
     title: "Sekretaris Umum",
-    href: "bidang/sekretaris-umum",
+    href: "bidang/sekretaris-umum/2",
     description:
       "Sekretaris Umum bertanggung jawab di bagian administrasi yang ada di organisasi, yaitu mengelola dokumen dan komunikasi organisasi. Sekretaris umum bertanggung jawab untuk menyusun dokumen seperti surat menyurat, laporan kegiatan, dan notulen rapat. Selain itu, Sekretaris Umum juga berperan dalam mengatur jadwal pertemuan dan memastikan informasi tersampaikan dengan baik kepada seluruh anggota organisasi.",
   },
   {
     title: "Bendahara Umum",
-    href: "bidang/bendahara-umum",
+    href: "bidang/bendahara-umum/3",
     description:
       "Bendahara Umum bertugas di bagian keuangan organisasi bertanggung jawab atas pencatatan pemasukan dan pengeluaran uang, menyusun laporan keuangan secara berkala, serta mengalokasikan anggaran untuk setiap kegiatan yang berlangsung.",
   },
   {
     title: "Bidang PSDM",
-    href: "bidang/PDSM",
+    href: "bidang/PDSM/4",
     description:
       "Bidang PSDM adalah bidang yang bertanggung jawab kepada internal beswan (penerima beasiswa), yaitu mengelola dan mengembangkan pottensi sumber daya manusia paguyuban KSE unila. Divisi ini berperan dalam menciptakan lingkungan yang mendukung pertumbuhan pribadi dan profesional. Serta memastikan keberlanjutan sumber daya manusia yang berkualtas.",
   },
   {
     title: "Bidang Pengabdian Masyarakat",
-    href: "bidang/pengabdian-masyarakat",
+    href: "bidang/pengabdian-masyarakat/5",
     description:
       "Bidang Pengmas adalah bidang yang mengelola kegiatan-kegiatan sosial di masyarakat, seperti kegiatan donor darah dan gerakan pungut sampah, tujuannya agar Paguyuban KSE Unila ini dapat memberikan dampak positif bagi masyarakat.",
   },
   {
     title: "Bidang Pendidikan Riset dan Teknologi",
-    href: "bidang/pendidikan-riset-dan-teknologi",
+    href: "bidang/pendidikan-riset-dan-teknologi/6",
     description:
       "Bidang Pemristek tugasnya menelengarakan kegiatan yang berhubungan dengan pendidikan, seperti Try Out UTBK untuk mendorong penelitian dan inovasi teknologi baru agar para anggota, mahasiswa dan masyarakat luar dapat memahami dan mengikuti perkembangan ilmu pengetahuan dan teknologi.",
   },
   {
     title: "Bidang Community Development",
-    href: "bidang/community-development",
+    href: "bidang/community-development/7",
     description: "Bidang Comdev merupakan bidang yang berfokus pada pengembangan dan pengabdian masyarakat dengan menghasilkan produk dan menyiapkan masyarakat yang bertujuan untuk meningkatkan pengetahuan dan kesadaran masyarakat agar masyarakat mempunyai skill atau kemampuan untuk menghasilkan finansial dan mendukung ekonomi mandiri.",
   },
   {
     title: "Bidang Kewirausahaan ",
-    href: "bidang/kewirausahaan",
+    href: "bidang/kewirausahaan/8",
     description:
       "Bidang Kewirausahaan adalah bidang yang bertanggung jawab dalam mengelola keuangan serta memberikan dukungan terhadap usaha mandiri. Serta bidang ini memiliki tanggung jawab atas alokasi dana untuk setiap kegiatan dan mengelola kegiatan bisnis kewirausahaan. Melalui program program tersebut bidang kewirausahaan menciptakan pendapatan yang berkelanjutan yang berguna untuk mendukung finansial organisasi. Bidang Kewirausahaan berkoordinasi langsung dengan Bendahara Umum untuk mengelola keuangan. ",
   },
   {
     title: "Bidang Kominfo",
-    href: "bidang/kominfo",
+    href: "bidang/kominfo/9",
     description:
       "Bidang Kominfo adalah bidang yang bertanggung jawab mengelola dan menyebarkan informasi internal dan eksternal. Serta mengoptimalkan media dan teknologi informasi untuk meningkatkan organisasi.",
   },
@@ -78,7 +78,7 @@ const navbar = () => {
           className="bg-slate-200 text-slate-800 hover:bg-slate-300 cursor-pointer"
           asChild
         >
-          <Link href="#home">Home</Link>
+          <Link href="/">Home</Link>
         </Button>
         <NavigationMenuItem className="list-none">
           <NavigationMenuTrigger className="bg-slate-200 text-slate-800 hover:bg-slate-300 cursor-pointer">Divisi</NavigationMenuTrigger>

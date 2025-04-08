@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
 import Navbar from "@/components/ui/navbar";
+import Footer from "@/components/ui/footer";
 import "./globals.css";
 import "boxicons/css/boxicons.min.css";
 
@@ -27,6 +28,7 @@ export default function RootLayout({
       >
         <Navbar />  
         {children}
+        <Footer />
       </body>
     </html>
   );
