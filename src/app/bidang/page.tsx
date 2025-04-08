@@ -102,7 +102,7 @@ const Bidang = () => {
   }, [search]);
 
   return (
-    <section className="mx-auto max-w-full lg:max-w-[92%] mb-8 mt-4">
+    <section className="mx-auto max-w-full lg:max-w-[92%] p-2 mb-8 mt-4">
       <section className="flex items-center gap-2 mb-4">
         <Input
           placeholder="Cari bidang..."
@@ -111,7 +111,7 @@ const Bidang = () => {
         />
         <Button
           variant="outline"
-          className="bg-slate-50 text-slate-800 hover:bg-slate-300 cursor-pointer"
+          className="bg-slate-50 text-slate-800 hover:bg-slate-300 cursor-pointer shadow-md"
           onClick={filterSearch}
         >
           <i className="bx bx-search"></i>
