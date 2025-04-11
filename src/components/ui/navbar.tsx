@@ -12,8 +12,16 @@ import {
 } from "./navigation-menu";
 import { cn } from "@/lib/utils";
 import React, { useEffect } from "react";
-import AOS from 'aos';
-import 'aos/dist/aos.css';
+import AOS from "aos";
+import "aos/dist/aos.css";
+import {
+  Sheet,
+  SheetClose,
+  SheetContent,
+  SheetHeader,
+  SheetTitle,
+  SheetTrigger,
+} from "./sheet";
 
 const components: { title: string; href: string; description: string }[] = [
   {
@@ -55,7 +63,8 @@ const components: { title: string; href: string; description: string }[] = [
   {
     title: "Bidang Community Development",
     href: "/bidang/community-development/7",
-    description: "Bidang Comdev merupakan bidang yang berfokus pada pengembangan dan pengabdian masyarakat dengan menghasilkan produk dan menyiapkan masyarakat yang bertujuan untuk meningkatkan pengetahuan dan kesadaran masyarakat agar masyarakat mempunyai skill atau kemampuan untuk menghasilkan finansial dan mendukung ekonomi mandiri.",
+    description:
+      "Bidang Comdev merupakan bidang yang berfokus pada pengembangan dan pengabdian masyarakat dengan menghasilkan produk dan menyiapkan masyarakat yang bertujuan untuk meningkatkan pengetahuan dan kesadaran masyarakat agar masyarakat mempunyai skill atau kemampuan untuk menghasilkan finansial dan mendukung ekonomi mandiri.",
   },
   {
     title: "Bidang Kewirausahaan ",
@@ -73,14 +82,14 @@ const components: { title: string; href: string; description: string }[] = [
 
 const Navbar = () => {
   useEffect(() => {
-          AOS.init({
-            once: true
-          });
+    AOS.init({
+      once: true,
+    });
   }, []);
 
   return (
     <nav className="text-slate-200 flex items-center justify-between bg-slate-50 mx-auto max-w-full lg:max-w-[92%] w-full p-4 rounded-md shadow-lg">
-      <NavigationMenu className="flex items-center gap-2">
+      <NavigationMenu className="hidden lg:items-center lg:gap-2 lg:flex">
         <Button
           data-aos-delay="500"
           data-aos="fade-right"
@@ -88,10 +97,18 @@ const Navbar = () => {
           className="bg-slate-200 text-slate-800 hover:bg-slate-300 cursor-pointer"
           asChild
         >
-          <Link href="/" className="flex items-center gap-2"><i className="bx bxs-home"></i> Home</Link>
+          <Link href="/" className="flex items-center gap-2">
+            <i className="bx bxs-home"></i> Home
+          </Link>
         </Button>
-        <NavigationMenuItem data-aos="fade-right"  data-aos-delay="400" className="list-none">
-          <NavigationMenuTrigger className="bg-slate-200 text-slate-800 hover:bg-slate-300 cursor-pointer flex items-center gap-2"><i className="bx bxs-group"></i> Bidang</NavigationMenuTrigger>
+        <NavigationMenuItem
+          data-aos="fade-right"
+          data-aos-delay="400"
+          className="list-none"
+        >
+          <NavigationMenuTrigger className="bg-slate-200 text-slate-800 hover:bg-slate-300 cursor-pointer flex items-center gap-2">
+            <i className="bx bxs-group"></i> Bidang
+          </NavigationMenuTrigger>
           <NavigationMenuContent>
             <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
               {components.map((component) => (
@@ -113,7 +130,9 @@ const Navbar = () => {
           className="bg-slate-200 text-slate-800 hover:bg-slate-300 cursor-pointer"
           asChild
         >
-          <Link href="/" className="flex items-center"><i className="bx bxs-camera"></i> Dokumentasi Kegiatan</Link>
+          <Link href="/" className="flex items-center">
+            <i className="bx bxs-camera"></i> Dokumentasi Kegiatan
+          </Link>
         </Button>
         <Button
           data-aos-delay="200"
@@ -122,7 +141,9 @@ const Navbar = () => {
           className="bg-slate-200 text-slate-800 hover:bg-slate-300 cursor-pointer"
           asChild
         >
-          <Link href="/" className="flex items-center"><i className="bx bxs-book"></i> Arsip</Link>
+          <Link href="/" className="flex items-center">
+            <i className="bx bxs-book"></i> Arsip
+          </Link>
         </Button>
         <Button
           data-aos-delay="100"
@@ -131,7 +152,9 @@ const Navbar = () => {
           className="bg-slate-200 text-slate-800 hover:bg-slate-300 cursor-pointer"
           asChild
         >
-          <Link href="/" className="flex items-center"><i className="bx bxs-calendar"></i> Kalender Kegiatan</Link>
+          <Link href="/" className="flex items-center">
+            <i className="bx bxs-calendar"></i> Kalender Kegiatan
+          </Link>
         </Button>
         <Button
           data-aos-delay="0"
@@ -140,12 +163,100 @@ const Navbar = () => {
           className="bg-slate-200 text-slate-800 hover:bg-slate-300 cursor-pointer"
           asChild
         >
-          <Link href="/" className="flex items-center"><i className="bx bxs-contact"></i> Hubungi Kami</Link>
+          <Link href="/" className="flex items-center">
+            <i className="bx bxs-contact"></i> Hubungi Kami
+          </Link>
         </Button>
       </NavigationMenu>
+      <Sheet>
+        <SheetTrigger className="flex items-center justify-center px-2 py-1 rounded-md bg-slate-200 text-slate-800 hover:bg-slate-300 cursor-pointer lg:hidden">
+          <i className="bx bx-menu text-lg"></i>
+        </SheetTrigger>
+        <SheetContent side="left">
+          <SheetHeader>
+            <SheetTitle>Menu</SheetTitle>
+          </SheetHeader>
+          <section className="flex flex-col gap-2 p-2">
+            <SheetClose asChild>
+              <Button
+                data-aos-delay="0"
+                data-aos="fade-right"
+                variant="outline"
+                className="border-l-4 border-slate-300 text-slate-800 hover:bg-slate-300 cursor-pointer"
+                asChild
+              >
+                <Link
+                  href="/"
+                  className="flex justify-start items-center gap-2"
+                >
+                  <i className="bx bxs-home"></i> Home
+                </Link>
+              </Button>
+            </SheetClose>
+            <SheetClose asChild>
+              <Button
+                data-aos-delay="100"
+                data-aos="fade-right"
+                variant="outline"
+                className="border-l-4 border-slate-300 text-slate-800 hover:bg-slate-300 cursor-pointer"
+                asChild
+              >
+                <Link href="/" className="flex justify-start items-center">
+                  <i className="bx bxs-camera"></i> Dokumentasi Kegiatan
+                </Link>
+              </Button>
+            </SheetClose>
+            <SheetClose asChild>
+              <Button
+                data-aos-delay="200"
+                data-aos="fade-right"
+                variant="outline"
+                className="border-l-4 border-slate-300 text-slate-800 hover:bg-slate-300 cursor-pointer"
+                asChild
+              >
+                <Link href="/" className="flex justify-start items-center">
+                  <i className="bx bxs-book"></i> Arsip
+                </Link>
+              </Button>
+            </SheetClose>
+            <SheetClose asChild>
+              <Button
+                data-aos-delay="300"
+                data-aos="fade-right"
+                variant="outline"
+                className="border-l-4 border-slate-300 text-slate-800 hover:bg-slate-300 cursor-pointer"
+                asChild
+              >
+                <Link href="/" className="flex justify-start items-center">
+                  <i className="bx bxs-calendar"></i> Kalender Kegiatan
+                </Link>
+              </Button>
+            </SheetClose>
+            <SheetClose asChild>
+              <Button
+                data-aos-delay="400"
+                data-aos="fade-right"
+                variant="outline"
+                className="border-l-4 border-slate-300 text-slate-800 hover:bg-slate-300 cursor-pointer"
+                asChild
+              >
+                <Link href="/" className="flex justify-start items-center">
+                  <i className="bx bxs-contact"></i> Hubungi Kami
+                </Link>
+              </Button>
+            </SheetClose>
+          </section>
+        </SheetContent>
+      </Sheet>
       <section className="flex items-center gap-2">
-        <h1 data-aos="fade-left" data-aos-delay="0" className="text-slate-800 text-[.9rem]">Paguyuban KSE</h1>
-        <Avatar data-aos="fade-left"  data-aos-delay="100" className="shadow">
+        <h1
+          data-aos="fade-left"
+          data-aos-delay="0"
+          className="text-slate-800 text-[.9rem]"
+        >
+          Paguyuban KSE
+        </h1>
+        <Avatar data-aos="fade-left" data-aos-delay="100" className="shadow">
           <AvatarImage src="https://files.catbox.moe/jckcrf.jpg" />
           <AvatarFallback>CN</AvatarFallback>
         </Avatar>

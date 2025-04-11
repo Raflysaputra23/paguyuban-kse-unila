@@ -104,16 +104,11 @@ const component: Components[] = [
 
 
 const DetailBidang = async ({ params }: { params: Promise<{ slug: string }> }) => {
-
     const { slug } = await params;
-    if(slug.length < 1) {
-      return NotFound();
-    }
     const item = component.find((item: Components) => item.id === Number(slug[1]));
     if(!item) {
       return NotFound();
     }
-    
 
     return (
       <Fragment>

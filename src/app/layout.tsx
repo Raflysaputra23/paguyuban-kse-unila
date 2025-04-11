@@ -25,7 +25,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${poppins.className} antialiased overflow-x-hidden bg-slate-200`}
+        className={`${poppins.className} overflow-x-hidden antialiased overflow-x-hidden bg-slate-200`}
       >
         <Navbar />  
         {children}
